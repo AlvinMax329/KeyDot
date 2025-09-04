@@ -22,11 +22,10 @@ jobs:
       
       # Step 3: Extract changelog entry for the current version.
       - name: Extract Changelog Entry
-        id: changelog_extractor
-        uses: a-b-r-o-w-n/simple-changelog-action@v1.0
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
         with:
           version: ${{ steps.tag_version.outputs.VERSION }}
-          changelog-file: 'CHANGELOG.md'
 
       # Step 4: Configure the CMake project.
       - name: Configure CMake
