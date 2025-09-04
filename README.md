@@ -32,8 +32,6 @@ KeyDot was built from the ground up for speed and ease of use. Here's how it com
 
 ## Supported Platforms
 
-KeyDot is actively being developed. Support for more platforms and Godot versions is on the way.
-
 -   ✅ **Windows** (64-bit PE Executables)
 -   ✅ **WebAssembly** (`.wasm` files)
 -   *Linux (ELF) and macOS (Mach-O) support is planned.*
@@ -94,7 +92,7 @@ Options:
 
 **1. Analyze a Windows Executable:**
 ```sh
-keydot.exe C:\Games\MyGodotGame\game.exe
+keydot.exe game.exe
 ```
 *Expected Output:*
 ```
@@ -125,9 +123,9 @@ WASM key: 0987654321fedcba0987654321fedcba0987654321fedcba0987654321fedcba
 
 ## Reporting Issues
 
-If you encounter a game where KeyDot fails to extract the key, or if you want to request support for a new platform (like Linux or macOS), please **open an issue** on this GitHub repository.
+If you encounter a game where KeyDot fails to extract the key, or if you want to request support for a new platform (like Linux or macOS), please **open an issue**.
 
-To help us resolve the issue quickly, please include:
+Make sure to include:
 1.  The sample game file (or a link to it).
 2.  The **full text output** of running KeyDot with the `--debug` flag.
 
