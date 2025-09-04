@@ -1,0 +1,53 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build-release:
+    runs-on: windows-latest
+
+    steps:
+      # Step 1: Check out the repository's code.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Extract the version number from the Git tag.
+      - name: Extract version from tag
+        id: tag_version
+        run: echo "VERSION=${{ github.ref_name }}" | ForEach-Object { $_ -replace '^v', '' } | Add-Content -Path $env:GITHUB_OUTPUT
+        shell: pwsh
+      
+      # Step 3: Extract changelog entry for the current version.
+      - name: Extract Changelog Entry
+        id: changelog_extractor
+        uses: a-b-r-o-w-n/simple-changelog-action@v1.0
+        with:
+          version: ${{ steps.tag_version.outputs.VERSION }}
+          changelog-file: 'CHANGELOG.md'
+
+      # Step 4: Configure the CMake project.
+      - name: Configure CMake
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      # Step 5: Build the project in Release configuration.
+      - name: Build Project
+        run: cmake --build build
+
+      # Step 6: Create a new GitHub Release and upload the executable.
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+          tag_name: ${{ github.ref_name }}
+
+          name: "KeyDot ${{ github.ref_name }}"
+          
+          body: ${{ steps.changelog_extractor.outputs.changelog-entry }}
+          
+          prerelease: false
+
+          files: build/Release/keydot.exe
