@@ -9,6 +9,9 @@ jobs:
   build-release:
     runs-on: windows-latest
 
+    permissions:
+      contents: write
+
     steps:
       # Step 1: Check out the repository's code.
       - name: Checkout code
@@ -33,7 +36,7 @@ jobs:
 
       # Step 5: Build the project in Release configuration.
       - name: Build Project
-        run: cmake --build build
+        run: cmake --build build --config Release
 
       # Step 6: Create a new GitHub Release and upload the executable.
       - name: Create GitHub Release
