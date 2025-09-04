@@ -133,29 +133,19 @@ To help us resolve the issue quickly, please include:
 
 ## Extraction Approach
 
-KeyDot uses a static, pattern-based approach to locate the encryption key. This avoids the overhead and complexity of running the game or using a debugger. The method differs depending on the target platform.
-
 ### Windows (PE Files)
 
-The extraction process for Windows executables is a multi-stage search that leverages known code and data patterns:
-
-1.  **Find Anchor String:** The process begins by searching for known error strings related to encrypted PCK loading (e.g., `"Can't open encrypted pack directory."`) within the read-only data section (`.rdata`).
-2.  **Locate Code Reference:** Once a string is located, the tool scans the executable's code section (`.text`) to find where this string is referenced by an instruction, typically `LEA` (Load Effective Address).
-3.  **Identify Key Pointer:** Within a small window of instructions following the `LEA`, the scanner looks for a crucial pattern: a `MOV` instruction that loads a 64-bit pointer from a global address (`MOV RAX, [RIP + offset]`). This address is almost always related to the cryptographic context.
+1.  **Find Anchor String:** The process begins by searching for known error strings related to encrypted PCK loading (e.g., `"Can't open encrypted pack directory."`) within the (`.rdata`).
+2.  **Locate Code Reference:** Once a string is located, the tool scans the (`.text`) to find where this string is referenced by an instruction, typically `LEA`.
+3.  **Identify Key Pointer:** Within a small window of instructions following the `LEA`, the scanner looks for a crucial pattern: a `MOV` instruction that loads a 64-bit pointer from a global address (`MOV RAX, [RIP + offset]`).
 4.  **Dereference Pointer:** This global address contains a *pointer to* the actual 32-byte encryption key blob, which typically resides in the `.data` section.
 5.  **Extract Key:** The tool reads the 32-byte blob from this final address, revealing the key.
 
-This chain of references (`Anchor String` → `LEA` → `MOV` → `Pointer to Key` → `32-byte Key`) provides a highly reliable method for locating the key across different Godot versions.
-
 ### WebAssembly (.wasm)
-
-The approach for WASM files is different and relies on pattern matching within the binary's data segments, as executable code analysis is not performed.
 
 1.  **Heuristic Search:** Godot's export template for WASM often embeds the encryption key as a raw byte array near the end of the file.
 2.  **Marker Identification:** KeyDot reads the last few kilobytes of the file and searches for a specific 7-byte "start marker" followed by a 4-byte "end marker".
 3.  **Key Extraction:** The 32-byte encryption key is consistently located immediately preceding this end marker.
-
-This static, pattern-based approach is what allows KeyDot to be extremely fast and reliable.
 
 ## Special Thanks
 
