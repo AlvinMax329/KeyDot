@@ -22,7 +22,7 @@ KeyDot was built from the ground up for speed and ease of use. Here's how it com
 | Tool                         | Standalone?¹ | Analysis Type | Speed (Windows)²              | Speed (WASM)³                 | Notes                                                    |
 | ---------------------------- | :----------: | :-----------: | ----------------------------- | ----------------------------- | -------------------------------------------------------- |
 | **KeyDot (This Project)**    |     ✅      |    Static     | **~50 ms**                    | **~6 ms**                     | Fully automated, no manual steps required.               |
-| [gdke](https://github.com/char-ptr/gdke) |     ✅      |    Static     | Slow (large files)            | ❌ Not Supported             | Requires manual function signature search in IDA/Ghidra. |
+| [gdke](https://github.com/char-ptr/gdke) |     ❌      |    Static     | Slow (large files)            | ❌ Not Supported             | Requires manual function signature search in IDA/Ghidra. |
 | [GodotPCKExplorer](https://github.com/DmitriySalnikov/GodotPCKExplorer/tree/master/Bruteforcer) |     ✅      |    Static     | ~4000 ms                      | ❌ Not Supported             | Slower pattern scanning.                                 |
 | [godot-key-extract](https://github.com/char-ptr/godot-key-extract) |      ❌      |    Dynamic    | Varies (fast)                 | ❌ Not Supported             | Requires DLL injection and running the game process.     |
 
