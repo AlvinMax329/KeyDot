@@ -1,4 +1,4 @@
-# KeyDot 🔑
+# KeyDot
 
 **Blazingly Fast, Static Godot Engine Encryption Key Extractor**
 
